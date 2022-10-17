@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+
+import { Box, Grid } from '@mui/material';
 import './App.css';
+import Header from './components/Header';
+import ProfileCard from './components/ProfileCard';
+import Search from './components/Search';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <Header />
+      <Search />
+      <Box sx={{ flexGrow: 1 }} padding={{xs : "10px 20px", md  : "15px 130px"}} >
+        <Grid
+          container
+          spacing={{ xs: 4, md: 4 }}
+          columns={{ xs: 1, md: 9 }}
         >
-          Learn React
-        </a>
-      </header>
+          {Array.from(Array(6)).map((_, index) => (
+            <Grid item xs={1} md={3} key={index}>
+              <ProfileCard />
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     </div>
   );
 }
