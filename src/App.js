@@ -26,7 +26,7 @@ function App() {
     <div className="App">
       <Header />
       <Search onSearch={handleSearch} />
-      {filterProfiles && <Profiles allProfiles={filterProfiles} />}
+      {filterProfiles && <Profiles users={filterProfiles} />}
       <Footer />
     </div>
   );
