@@ -51,16 +51,16 @@ const ProfileCard = (props) => {
           </Box>
           <Box sx={{ display: "flex", p: "15px 5px" }}>
             <Link href={social.facebook} target="_blank">
-              <FacebookIcon sx={{ p: "5px 8px" }} />
+              <FacebookIcon sx={{ p: "5px 8px", color: "#564FB1" }} />
             </Link>
             <Link href={social.instagram} target="_blank">
-              <InstagramIcon sx={{ p: "5px 8px" }} />
+              <InstagramIcon sx={{ p: "5px 8px", color: "#564FB1" }} />
             </Link>
             <Link href={social.linkedIn} target="_blank">
-              <LinkedInIcon sx={{ p: "5px 8px" }} />
+              <LinkedInIcon sx={{ p: "5px 8px", color: "#564FB1" }} />
             </Link>
             <Link href={social.twitter} target="_blank">
-              <TwitterIcon sx={{ p: "5px 8px" }} />
+              <TwitterIcon sx={{ p: "5px 8px", color: "#564FB1" }} />
             </Link>
           </Box>
           <Box sx={{ display: "flex" }}>
@@ -72,7 +72,10 @@ const ProfileCard = (props) => {
                 m: "0px 10px",
               }}
             >
-              <Typography level="h4" sx={{ fontWeight: "bold" }}>
+              <Typography
+                level="h4"
+                sx={{ fontWeight: "bold", color: "#564FB1" }}
+              >
                 {followers}
               </Typography>
               <Typography level="h4" sx={{}}>
@@ -87,7 +90,10 @@ const ProfileCard = (props) => {
                 m: "0px 10px",
               }}
             >
-              <Typography level="h4" sx={{ fontWeight: "bold" }}>
+              <Typography
+                level="h4"
+                sx={{ fontWeight: "bold", color: "#564FB1" }}
+              >
                 {category}
               </Typography>
               <Typography level="h4" sx={{}}>
@@ -102,7 +108,10 @@ const ProfileCard = (props) => {
                 m: "0px 10px",
               }}
             >
-              <Typography level="h4" sx={{ fontWeight: "bold" }}>
+              <Typography
+                level="h4"
+                sx={{ fontWeight: "bold", color: "#564FB1" }}
+              >
                 {gender}
               </Typography>
               <Typography level="h4" sx={{}}>

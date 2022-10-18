@@ -33,7 +33,7 @@ const Header = () => {
 
   return (
     <AppBar position="static" sx={{ background: "#F7F7F8", boxShadow: 0 }}>
-      <Container maxWidth="xl" sx={{ p: { xs: "0px 5px", md: "0px 130px" } }}>
+      <Container maxWidth="xl" sx={{ p: { xs: "0px 3px", md: "0px 130px" } }}>
         <Toolbar disableGutters>
           {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
           <Stack sx={{ flexDirection: "row", textAlign: "center", m: "10px" }}>
@@ -88,19 +88,22 @@ const Header = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <IconButton sx={{ p: 2 }}>
+            <IconButton sx={{ p: 1 }}>
               <NotificationsNoneIcon />
             </IconButton>
-            <IconButton sx={{ p: 2 }}>
+            <IconButton sx={{ p: 1 }}>
               <DarkModeIcon />
             </IconButton>
 
             <Tooltip title="RHShoumik">
               <IconButton sx={{ p: 0 }}>
+                <Typography sx={{ color: "black", pr: "6px" }}>
+                  Hi Rakib
+                </Typography>
                 <Avatar
                   variant="rounded"
                   alt="Remy Sharp"
-                  src="/static/images/avatar/2.jpg"
+                  src="./Assets/Images/romina-farias-BsZ71j4i_m4-unsplash.jpg"
                 />
               </IconButton>
             </Tooltip>

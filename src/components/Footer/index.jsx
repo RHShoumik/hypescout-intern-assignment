@@ -17,7 +17,7 @@ const Footer = () => {
         justifyContent="space-between"
         alignItems="center"
       >
-        <Stack>
+        <Stack sx={{width:"25%"}}>
           <Stack sx={{ flexDirection: "row", textAlign: "center", m: "10px" }}>
             <Avatar
               alt="Site Icon"
@@ -42,7 +42,7 @@ const Footer = () => {
             fontWeight="400"
             sx={{ textAlign: "left" }}
           >
-            A data-driven influencer marketing <br />
+            A data-driven influencer marketing 
             platform.
           </Typography>
           <Box sx={{ display: "flex", p: "5px 5px" }}>
@@ -60,7 +60,7 @@ const Footer = () => {
             </Link>
           </Box>
         </Stack>
-        <Stack>
+        <Stack xs={{width : "25%"}}>
           <Typography level="h5" fontSize="16px" fontWeight="600">
             Company
           </Typography>
@@ -72,7 +72,7 @@ const Footer = () => {
             <Typography>Contact Us</Typography>
           </Stack>
         </Stack>
-        <Stack sx={{ flexDirection: "row" }}>
+        <Stack sx={{ flexDirection: "row", justifyContent: "space-around", width: "50%" }}>
           <Stack>
             <Typography level="h5" fontSize="16px" fontWeight="600">
               Influencer

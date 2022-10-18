@@ -570,25 +570,6 @@ const Users = [
     category: "Fashion",
     gender: "Male",
     joinedDate: "July 26th, 2022",
-  },
-  {
-    id: uuidv4(),
-    name: "Aiony-Haust",
-    img: "./Assets/Images/aiony-haust.jpg",
-    city: "Dhaka",
-    country: "Bangladesh",
-    social: {
-      facebook: "#",
-      instagram: "#",
-      linkedIn: "#",
-      twitter: "#",
-    },
-    phone: "+123 456 789",
-    email: "b@beyonce.com",
-    followers: "12k",
-    category: "Fashion",
-    gender: "Male",
-    joinedDate: "July 26th, 2022",
-  },
+  }
 ];
 export default Users;

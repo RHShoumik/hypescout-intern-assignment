@@ -49,7 +49,7 @@ const Search = (props) => {
       </Paper>
 
       <Button
-        sx={{ p: "25px, 15px" }}
+        sx={{ p: "25px, 15px", background: "#564FB1" }}
         variant="contained"
         startIcon={
           <svg
