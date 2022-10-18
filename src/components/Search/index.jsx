@@ -1,18 +1,28 @@
 import SearchIcon from "@mui/icons-material/Search";
 import { Button, IconButton, InputBase, Paper, Stack, Typography } from "@mui/material";
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-const Search = () => {
+const Search = (props) => {
+  const [searchText, setSearchText] = useState("");
+  const { onSearch } = props;
+
+  const handleChange = (e) => {
+    setSearchText(e.target.value);
+  };
+  useEffect(() => {
+    onSearch(searchText);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchText]);
 
   return (
     <Stack
       direction={{ xs: "column", md: "row" }}
-      margin ={{ xs: "10px 20px", md: "30px 130px" }}
+      margin={{ xs: "10px 20px", md: "30px 130px" }}
       spacing={1}
       justifyContent="space-between"
       alignItems="center"
-      sx={{ p: "20px 80px", borderRadius : "8px", background: "#F7F7F8"}}
+      sx={{ p: "20px 80px", borderRadius: "8px", background: "#F7F7F8" }}
     >
       <Typography variant="h5">Porfile (100) </Typography>
 
@@ -23,7 +33,7 @@ const Search = () => {
           display: "flex",
           alignItems: "center",
           flex: 1,
-          boxShadow : "none"
+          boxShadow: "none",
         }}
       >
         <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
@@ -31,6 +41,8 @@ const Search = () => {
         </IconButton>
         <InputBase
           sx={{ flex: 1 }}
+          value={searchText}
+          onChange={handleChange}
           variant="outlined"
           placeholder="Search Profile"
         />

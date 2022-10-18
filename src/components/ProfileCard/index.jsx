@@ -1,14 +1,25 @@
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import ScheduleIcon from "@mui/icons-material/Schedule";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import { Avatar, Box, Card, Stack, Typography } from '@mui/material';
-import React from 'react';
-import Avater from "../../Assets/Images/avater.jpg";
+import { Avatar, Box, Card, Stack, Typography } from "@mui/material";
+import Link from "@mui/material/Link";
+import React from "react";
 
-const ProfileCard = () => {
+const ProfileCard = (props) => {
+  const {
+    name,
+    img,
+    city,
+    country,
+    social,
+    followers,
+    category,
+    gender,
+    joinedDate,
+  } = props.info;
   return (
     <Box sx={{ minHeight: 350 }}>
       <Card variant="outlined" sx={{ p: "15px", background: "#F7F7F8" }}>
@@ -19,7 +30,7 @@ const ProfileCard = () => {
         >
           <Avatar
             alt="Remy Sharp"
-            src={Avater}
+            src={img}
             sx={{ width: 140, height: 140, mb: "15px" }}
           />
           <Typography
@@ -28,21 +39,29 @@ const ProfileCard = () => {
             fontWeight="700"
             sx={{ mb: 0.5 }}
           >
-            Avater Name
+            {name}
           </Typography>
           <Box sx={{ display: "flex", p: "5px" }}>
             <LocationOnOutlinedIcon sx={{ mr: "6px" }} />
-            <Typography>Dhaka Bangladesh</Typography>
+            <Typography>{`${city} ${country}`}</Typography>
           </Box>
           <Box sx={{ display: "flex" }}>
             <ScheduleIcon sx={{ mr: "6px" }} />
-            <Typography>Joined On: july 26th, 2022</Typography>
+            <Typography>Joined On: {joinedDate}</Typography>
           </Box>
           <Box sx={{ display: "flex", p: "15px 5px" }}>
-            <FacebookIcon sx={{ p: "5px 8px" }} />
-            <InstagramIcon sx={{ p: "5px 8px" }} />
-            <LinkedInIcon sx={{ p: "5px 8px" }} />
-            <TwitterIcon sx={{ p: "5px 8px" }} />
+            <Link href={social.facebook} target="_blank">
+              <FacebookIcon sx={{ p: "5px 8px" }} />
+            </Link>
+            <Link href={social.instagram} target="_blank">
+              <InstagramIcon sx={{ p: "5px 8px" }} />
+            </Link>
+            <Link href={social.linkedIn} target="_blank">
+              <LinkedInIcon sx={{ p: "5px 8px" }} />
+            </Link>
+            <Link href={social.twitter} target="_blank">
+              <TwitterIcon sx={{ p: "5px 8px" }} />
+            </Link>
           </Box>
           <Box sx={{ display: "flex" }}>
             <Stack
@@ -54,7 +73,7 @@ const ProfileCard = () => {
               }}
             >
               <Typography level="h4" sx={{ fontWeight: "bold" }}>
-                12k
+                {followers}
               </Typography>
               <Typography level="h4" sx={{}}>
                 Followers
@@ -69,7 +88,7 @@ const ProfileCard = () => {
               }}
             >
               <Typography level="h4" sx={{ fontWeight: "bold" }}>
-                Fashion
+                {category}
               </Typography>
               <Typography level="h4" sx={{}}>
                 Categories
@@ -84,7 +103,7 @@ const ProfileCard = () => {
               }}
             >
               <Typography level="h4" sx={{ fontWeight: "bold" }}>
-                Male
+                {gender}
               </Typography>
               <Typography level="h4" sx={{}}>
                 Gender
@@ -95,6 +114,6 @@ const ProfileCard = () => {
       </Card>
     </Box>
   );
-}
+};
 
-export default ProfileCard
+export default ProfileCard;
