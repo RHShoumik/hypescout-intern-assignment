@@ -1,7 +1,7 @@
-import AdbIcon from "@mui/icons-material/Adb";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import MenuIcon from "@mui/icons-material/Menu";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
+import { Stack } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
@@ -32,36 +32,43 @@ const Header = () => {
   
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ background: "#F7F7F8" }}>
       <Container maxWidth="xl" sx={{ p: { xs: "0px 5px", md: "0px 130px" } }}>
         <Toolbar disableGutters>
           {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="logo"
-          >
-            <AdbIcon />
-          </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            hypescout
-          </Typography>
-
+          <Stack sx={{ flexDirection: "row", textAlign: "center", m: "10px" }}>
+            <Avatar
+              alt="Site Icon"
+              variant="square"
+              src="/Assets/Images/logo.png"
+              sx={{
+                width: "auto",
+                height: "25px",
+                backgroundSize: "cover",
+                alignItems: "center",
+                pt: "2px",
+                mr: "6px",
+              }}
+            />
+            <Typography
+              level="h2"
+              fontSize="24px"
+              fontWeight="700"
+              noWrap
+              component="a"
+              href="/"
+              sx={{
+                mr: 2,
+                display: { xs: "flex", md: "flex" },
+                fontFamily: "monospace",
+                fontWeight: 700,
+                color: "#231F20",
+                textDecoration: "none",
+              }}
+            >
+              hypescout
+            </Typography>
+          </Stack>
           <Box
             sx={{
               flexGrow: 1,
@@ -73,7 +80,7 @@ const Header = () => {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{ my: 2, color: "#231F20", display: "block" }}
               >
                 {page}
               </Button>
@@ -89,7 +96,6 @@ const Header = () => {
             </IconButton>
 
             <Tooltip title="RHShoumik">
-              
               <IconButton sx={{ p: 0 }}>
                 <Avatar
                   variant="rounded"
