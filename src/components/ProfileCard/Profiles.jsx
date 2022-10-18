@@ -36,6 +36,7 @@ const Profiles = ({ users }) => {
               <ProfileCard info={user} />
             </Grid>
           ))}
+          
         </Grid>
       </Box>
       <Pagination page={page} onPrev={ onPrev} onNext={onNext} totalPage={totalPage} />
