@@ -74,14 +74,3 @@ const Search = (props) => {
 }
 
 export default Search
-
-{/* <Box
-      component="form"
-      sx={{
-        "& > :not(style)": { m: 1, width: "50ch" },
-      }}
-      noValidate
-      autoComplete="off"
-    >
-      <TextField id="outlined-basic" label="Search Profile" variant="outlined" />
-      </Box> */}
