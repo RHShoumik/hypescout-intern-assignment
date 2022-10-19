@@ -1,3 +1,4 @@
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useState } from 'react';
 import './App.css';
 import Footer from './components/Footer';
@@ -6,8 +7,23 @@ import Profiles from './components/ProfileCard/Profiles';
 import Search from './components/Search';
 import Users from './usersProfile';
 
+
+const theme = createTheme({
+  typography: {
+    fontFamily: ["Sen", "sans-serif"].join(","),
+  },
+  palette: {
+    primary: {
+      main: "#231F20",
+    },
+    secondary: {
+      main: "#564FB1",
+    },
+  },
+});
 function App() {
   const [filterProfiles, setFilterProfiles] = useState(Users);
+  const [filterCategory, setFilterCategory] = useState("")
 
   const handleSearch = (searchItem) => {
     const item = searchItem.toLowerCase();
@@ -15,20 +31,25 @@ function App() {
       setFilterProfiles(Users);
       return filterProfiles;
     }
-    const searchFilter = filterProfiles.filter((user) => {
-      const userName = user.name.toLowerCase();
-      return userName.match(item);
-    });
-    console.log(searchFilter)
-    setFilterProfiles(searchFilter);
+    else {
+      const searchFilter = filterProfiles.filter((user) => {
+        const userName = user.name.toLowerCase();
+        return userName.match(item);
+      });
+      
+      console.log(filterCategory);
+      setFilterProfiles(searchFilter);
+    }
   };
   return (
-    <div className="App">
-      <Header />
-      <Search onSearch={handleSearch} />
-      {filterProfiles && <Profiles users={filterProfiles} />}
-      <Footer />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <Header />
+        <Search onSearch={handleSearch} setFilterCategory={setFilterCategory} />
+        {filterProfiles && <Profiles users={filterProfiles} />}
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 

@@ -1,19 +1,40 @@
 import SearchIcon from "@mui/icons-material/Search";
-import { Button, IconButton, InputBase, Paper, Stack, Typography } from "@mui/material";
+import { Box, Button, FormControl, IconButton, InputBase, InputLabel, MenuItem, Modal, Paper, Select, Stack, Typography } from "@mui/material";
 
 import React, { useEffect, useState } from 'react';
 
-const Search = (props) => {
-  const [searchText, setSearchText] = useState("");
-  const { onSearch } = props;
+const style = {
+  position: "absolute",
+  top: { xs: "38%", md: "25%" },
+  right: { xs: "15%", md: "151px" },
+  bgcolor: "white",
+  boxShadow: 24,
+  width: "fit-content",
+  borderRadius: "5px",
+  p: 4,
+};
 
+const Search = ({ onSearch, setFilterCategory }) => {
+  const [searchText, setSearchText] = useState("");
+  const [open, setOpen] = useState(false);
+  const [category, setCategory] = useState("");
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const handleChange = (e) => {
     setSearchText(e.target.value);
   };
+  const handleCategoryChange = (event) => {
+    setCategory(event.target.value);
+  };
   useEffect(() => {
     onSearch(searchText);
+    if (category !== "") {
+      setCategory(category);
+      setFilterCategory(category);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchText]);
+  }, [searchText, category]);
 
   return (
     <Stack
@@ -51,6 +72,7 @@ const Search = (props) => {
       <Button
         sx={{ p: "25px, 15px", background: "#564FB1" }}
         variant="contained"
+        onClick={handleOpen}
         startIcon={
           <svg
             width="20"
@@ -69,8 +91,52 @@ const Search = (props) => {
       >
         Advance Filter
       </Button>
+      <Modal
+        keepMounted
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="keep-mounted-modal-title"
+        aria-describedby="keep-mounted-modal-description"
+      >
+        <Box sx={style}>
+          <Box>
+            <Typography
+              id="keep-mounted-modal-title"
+              variant="h6"
+              component="h2"
+              fontWeight="900"
+            >
+              Filter Options
+            </Typography>
+          </Box>
+          <Box>
+            <Typography>Influencer’s Category</Typography>
+            <FormControl sx={{ mt: 1, minWidth: 260 }}>
+              <InputLabel id="demo-simple-select-label">
+                Select Options
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={category}
+                label="Select"
+                onChange={handleCategoryChange}
+              >
+                <MenuItem value="fashion">Fashion</MenuItem>
+                <MenuItem value="travel">Travel</MenuItem>
+                <MenuItem value="cooking">Cooking</MenuItem>
+                <MenuItem value="education">Education</MenuItem>
+                <MenuItem value="technology">Technology</MenuItem>
+                <MenuItem value="photography">Photography</MenuItem>
+                <MenuItem value="streaming">Streaming</MenuItem>
+                <MenuItem value="entertainment">Entertainment</MenuItem>
+              </Select>
+            </FormControl>
+          </Box>
+        </Box>
+      </Modal>
     </Stack>
   );
-}
+};
 
 export default Search
