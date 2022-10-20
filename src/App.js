@@ -45,7 +45,11 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className="App">
         <Header />
-        <Search onSearch={handleSearch} setFilterCategory={setFilterCategory} />
+        <Search
+          totalUser={Users.length}
+          onSearch={handleSearch}
+          setFilterCategory={setFilterCategory}
+        />
         {filterProfiles && <Profiles users={filterProfiles} />}
         <Footer />
       </div>

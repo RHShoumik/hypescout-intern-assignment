@@ -14,7 +14,7 @@ const style = {
   p: 4,
 };
 
-const Search = ({ onSearch, setFilterCategory }) => {
+const Search = ({ totalUser, onSearch, setFilterCategory }) => {
   const [searchText, setSearchText] = useState("");
   const [open, setOpen] = useState(false);
   const [category, setCategory] = useState("");
@@ -39,18 +39,17 @@ const Search = ({ onSearch, setFilterCategory }) => {
   return (
     <Stack
       direction={{ xs: "column", md: "row" }}
-      margin={{ xs: "10px 20px", md: "30px 130px" }}
+      margin={{ xs: "10px 10px", md: "30px 130px" }}
       spacing={1}
       justifyContent="space-between"
       alignItems="center"
-      sx={{ p: "20px 80px", borderRadius: "8px", background: "#F7F7F8" }}
+      sx={{ p: "20px 20px", borderRadius: "8px", background: "#F7F7F8" }}
     >
-      <Typography variant="h5">Porfile (100) </Typography>
+      <Typography variant="h5">Porfile ({totalUser}) </Typography>
 
       <Paper
         component="form"
         sx={{
-          p: "15px, 279px, 15px, 15px",
           display: "flex",
           alignItems: "center",
           flex: 1,
@@ -70,7 +69,7 @@ const Search = ({ onSearch, setFilterCategory }) => {
       </Paper>
 
       <Button
-        sx={{ p: "25px, 15px", background: "#564FB1" }}
+        sx={{ p: "50px, 5px", background: "#564FB1" }}
         variant="contained"
         onClick={handleOpen}
         startIcon={
