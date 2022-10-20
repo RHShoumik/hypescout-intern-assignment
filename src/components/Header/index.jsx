@@ -81,70 +81,80 @@ const Header = () => {
                 key={page}
                 onClick={handleCloseNavMenu}
                 href={`/${page.toLocaleLowerCase()}`}
-                sx={{ my: 2, color: "#231F20", display: "block"}}
+                sx={{ my: 2, color: "#231F20", display: "block" }}
               >
                 {page}
               </Button>
             ))}
           </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
-            <IconButton sx={{ p: 1 }}>
-              <NotificationsNoneIcon />
-            </IconButton>
-            <IconButton sx={{ p: 1 }}>
-              <DarkModeIcon />
-            </IconButton>
-
-            <Tooltip title="RHShoumik">
-              <IconButton sx={{ p: 0 }}>
-                <Typography sx={{ color: "black", pr: "6px" }}>
-                  Hi Rakib
-                </Typography>
-                <Avatar
-                  variant="rounded"
-                  alt="Remy Sharp"
-                  src="./Assets/Images/romina-farias-BsZ71j4i_m4-unsplash.jpg"
-                />
+          <Stack
+            sx={{
+              flexDirection: "row",
+              flexGrow: 1,
+              justifyContent: "flex-end",
+            }}
+          >
+            <Box sx={{ flexGrow: 0 }}>
+              <IconButton sx={{ p: 1 }}>
+                <NotificationsNoneIcon />
               </IconButton>
-            </Tooltip>
-          </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon color="primary"/>
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
+              <IconButton sx={{ p: 1 }}>
+                <DarkModeIcon />
+              </IconButton>
+
+              <Tooltip title="RHShoumik">
+                <IconButton sx={{ p: 0, backgroundColor: "transparent" }}>
+                  <Typography
+                    display={{ xs: "none", md: "flex" }}
+                    sx={{ color: "black", pr: "6px" }}
+                  >
+                    Hi, Rakib
+                  </Typography>
+                  <Avatar
+                    variant="rounded"
+                    alt="Remy Sharp"
+                    src="./Assets/Images/romina-farias-BsZ71j4i_m4-unsplash.jpg"
+                  />
+                </IconButton>
+              </Tooltip>
+            </Box>
+            <Box sx={{ display: { xs: "flex", md: "none" } }}>
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleOpenNavMenu}
+                color="inherit"
+              >
+                <MenuIcon color="primary" />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorElNav}
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "left",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+                open={Boolean(anchorElNav)}
+                onClose={handleCloseNavMenu}
+                sx={{
+                  display: { xs: "block", md: "none" },
+                }}
+              >
+                {pages.map((page) => (
+                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">{page}</Typography>
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Box>
+          </Stack>
         </Toolbar>
       </Container>
     </AppBar>
