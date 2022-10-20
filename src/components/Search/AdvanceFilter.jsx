@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 
 const style = {
   position: "absolute",
-  top: { xs: "38%", md: "100px" },
-  right: { xs: "15%", md: "151px" },
+  top: { xs: "30px", md: "100px" },
+  right: { xs: "15px", md: "151px" },
   bgcolor: "white",
   boxShadow: 24,
   width: "fit-content",
@@ -41,7 +41,7 @@ const followersCounter = [
     label: "1000k",
   },
 ];
-const AdvanceFilter = ({ onHandleFilter }) => {
+const AdvanceFilter = ({ onHandleFilter, onHandleReset }) => {
   const [open, setOpen] = useState(false);
   const [category, setCategory] = useState("");
   const [country, setCountry] = useState("");
@@ -67,8 +67,8 @@ const AdvanceFilter = ({ onHandleFilter }) => {
     setGender(event.target.value);
   };
   function handleFollowers(value) {
-      return `${value}k`;
-    };
+    return `${value}k`;
+  }
 
   const handleReset = () => {
     setCategory("");
@@ -76,12 +76,14 @@ const AdvanceFilter = ({ onHandleFilter }) => {
     setAudience("");
     setSocial("");
     setGender("");
+    onHandleReset();
+    handleClose();
   };
   const handleApply = () => {
     // console.log(
     //   country + " " + category + " " + audience + " " + social + " " + gender
     // );
-    onHandleFilter(category, country, gender, audience, social );
+    onHandleFilter(category, country, gender, social);
     handleClose();
   };
 
@@ -244,7 +246,7 @@ const AdvanceFilter = ({ onHandleFilter }) => {
               </RadioGroup>
             </FormControl>
           </Box>
-          <Box sx={{ width: 300 }}>
+          <Box sx={{ minWidth: 260 }}>
             <Slider
               aria-label="Always visible"
               color="secondary"

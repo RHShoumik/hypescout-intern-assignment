@@ -10,6 +10,9 @@ const Search = ({ totalUser, Users,filterProfiles, setFilterProfiles }) => {
   const handleChange = (e) => {
     setSearchText(e.target.value);
   };
+  const handleReset = () => {
+    setFilterProfiles(Users);
+  }
 
   const handleSearch = (searchItem) => {
     const item = searchItem.toLowerCase();
@@ -83,7 +86,10 @@ const Search = ({ totalUser, Users,filterProfiles, setFilterProfiles }) => {
           placeholder="Search Profile"
         />
       </Paper>
-      <AdvanceFilter onHandleFilter={handleFilter} />
+      <AdvanceFilter
+        onHandleFilter={handleFilter}
+        onHandleReset={handleReset}
+      />
     </Stack>
   );
 };
