@@ -108,7 +108,7 @@ const Footer = () => {
               </Stack>
             </Stack>
             <Stack>
-              <Typography level="h5" fontSize="18px" fontWeight="600" mb="8px">
+              <Typography level="h5" fontSize="18px" fontWeight="600" m="12px 0px 8px 0px">
                 Advertiser
               </Typography>
               <Stack>
@@ -138,7 +138,7 @@ const Footer = () => {
             <Link
               href="#"
               underline="none"
-              sx={{ color: "#637381", p: "0px 15px" }}
+              sx={{ color: "#637381", p: "0px 10px" }}
             >
               Terms & Conditions
             </Link>
@@ -147,7 +147,7 @@ const Footer = () => {
             <Link
               href="#"
               underline="none"
-              sx={{ color: "#637381", p: "0px 15px" }}
+              sx={{ color: "#637381", p: "0px 10px" }}
             >
               Privacy
             </Link>
@@ -156,7 +156,7 @@ const Footer = () => {
             <Link
               href="#"
               underline="none"
-              sx={{ color: "#637381", p: "0px 15px" }}
+              sx={{ color: "#637381", p: "0px 10px" }}
             >
               Sitemap
             </Link>
