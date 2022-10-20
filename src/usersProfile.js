@@ -557,7 +557,7 @@ const Users = [
     name: "Aiony-Haust",
     img: "./Assets/Images/aiony-haust.jpg",
     city: "Dhaka",
-    country: "Bangladesh",
+    country: "Pakisthan",
     social: {
       facebook: "#",
       instagram: "#",
@@ -570,6 +570,6 @@ const Users = [
     category: "Fashion",
     gender: "Male",
     joinedDate: "July 26th, 2022",
-  }
+  },
 ];
 export default Users;

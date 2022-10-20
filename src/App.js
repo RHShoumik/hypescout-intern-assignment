@@ -23,32 +23,15 @@ const theme = createTheme({
 });
 function App() {
   const [filterProfiles, setFilterProfiles] = useState(Users);
-  const [filterCategory, setFilterCategory] = useState("")
-
-  const handleSearch = (searchItem) => {
-    const item = searchItem.toLowerCase();
-    if (item === "") {
-      setFilterProfiles(Users);
-      return filterProfiles;
-    }
-    else {
-      const searchFilter = filterProfiles.filter((user) => {
-        const userName = user.name.toLowerCase();
-        return userName.match(item);
-      });
-      
-      console.log(filterCategory);
-      setFilterProfiles(searchFilter);
-    }
-  };
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
         <Header />
         <Search
-          totalUser={Users.length}
-          onSearch={handleSearch}
-          setFilterCategory={setFilterCategory}
+          totalUser={filterProfiles.length}
+          setFilterProfiles={setFilterProfiles}
+          filterProfiles={filterProfiles}
+          Users={Users}
         />
         {filterProfiles && <Profiles users={filterProfiles} />}
         <Footer />
