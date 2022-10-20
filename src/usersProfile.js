@@ -24,7 +24,7 @@ const Users = [
     id: uuidv4(),
     name: "RHShoumik",
     img: "./Assets/Images/alex-suprun-ZHvM3XIOHoE-unsplash.jpg",
-    city: "Dhaka",
+    city: "London",
     country: "UK",
     social: {
       facebook: "#",
@@ -43,7 +43,7 @@ const Users = [
     id: uuidv4(),
     name: "Jonathan Smith",
     img: "./Assets/Images/ana-itonishvili-Fyl8sMC2j2Q-unsplash.jpg",
-    city: "Dhaka",
+    city: "Lahore",
     country: "Pakisthan",
     social: {
       facebook: "#",
@@ -81,7 +81,7 @@ const Users = [
     id: uuidv4(),
     name: "Aiony-Hassan",
     img: "./Assets/Images/ben-den-engelsen-YUu9UAcOKZ4-unsplash.jpg",
-    city: "Dhaka",
+    city: "Los Angels",
     country: "America",
     social: {
       facebook: "#",
@@ -100,7 +100,7 @@ const Users = [
     id: uuidv4(),
     name: "Shoumik",
     img: "./Assets/Images/brantley-neal-UVUMHL-DzVM-unsplash.jpg",
-    city: "Dhaka",
+    city: "New York",
     country: "US",
     social: {
       facebook: "#",
@@ -119,7 +119,7 @@ const Users = [
     id: uuidv4(),
     name: "Brooke Cagle",
     img: "./Assets/Images/brooke-cagle-Nm70URdtf3c-unsplash.jpg",
-    city: "Dhaka",
+    city: "Toronto",
     country: "Canada",
     social: {
       facebook: "#",
@@ -138,7 +138,7 @@ const Users = [
     id: uuidv4(),
     name: "Christina",
     img: "./Assets/Images/christina-wocintechchat-com-0Zx1bDv5BNY-unsplash.jpg",
-    city: "Dhaka",
+    city: "Lahore",
     country: "Pakisthan",
     social: {
       facebook: "#",
@@ -157,7 +157,7 @@ const Users = [
     id: uuidv4(),
     name: "Christopher",
     img: "./Assets/Images/christopher-campbell-rDEOVtE7vOs-unsplash.jpg",
-    city: "Dhaka",
+    city: "Kalkata",
     country: "India",
     social: {
       facebook: "#",
@@ -176,7 +176,7 @@ const Users = [
     id: uuidv4(),
     name: "Ed-Haust",
     img: "./Assets/Images/edward-cisneros-_H6wpor9mjs-unsplash.jpg",
-    city: "Dhaka",
+    city: "Victoria",
     country: "Canada",
     social: {
       facebook: "#",
@@ -195,7 +195,7 @@ const Users = [
     id: uuidv4(),
     name: "Aiony-Haust",
     img: "./Assets/Images/foto-sushi-6anudmpILw4-unsplash.jpg",
-    city: "Dhaka",
+    city: "Panjab",
     country: "India",
     social: {
       facebook: "#",
@@ -214,7 +214,7 @@ const Users = [
     id: uuidv4(),
     name: "Aiony-Haust",
     img: "./Assets/Images/gabriel-silverio-u3WmDyKGsrY-unsplash.jpg",
-    city: "Dhaka",
+    city: "New York",
     country: "US",
     social: {
       facebook: "#",
@@ -233,7 +233,7 @@ const Users = [
     id: uuidv4(),
     name: "Aiony-Haust",
     img: "./Assets/Images/harps-joseph-tAvpDE7fXgY-unsplash.jpg",
-    city: "Dhaka",
+    city: "Kabul",
     country: "Afganisthan",
     social: {
       facebook: "#",
@@ -252,7 +252,7 @@ const Users = [
     id: uuidv4(),
     name: "Jd Manson",
     img: "./Assets/Images/jd-mason-2oUiUu5QAys-unsplash.jpg",
-    city: "Dhaka",
+    city: "Kalkata",
     country: "India",
     social: {
       facebook: "#",
@@ -271,7 +271,7 @@ const Users = [
     id: uuidv4(),
     name: "Jonathan Zerger",
     img: "./Assets/Images/jonathan-zerger-owd6tarUcac-unsplash.jpg",
-    city: "Dhaka",
+    city: "New York",
     country: "US",
     social: {
       facebook: "#",
@@ -283,14 +283,14 @@ const Users = [
     email: "b@beyonce.com",
     followers: "12k",
     category: "Education",
-    gender: "Male",
+    gender: "Female",
     joinedDate: "July 26th, 2022",
   },
   {
     id: uuidv4(),
     name: "Aiony-Haust",
     img: "./Assets/Images/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg",
-    city: "Dhaka",
+    city: "Bogura",
     country: "Bangladesh",
     social: {
       facebook: "#",
@@ -309,7 +309,7 @@ const Users = [
     id: uuidv4(),
     name: "Julian Wan",
     img: "./Assets/Images/julian-wan-WNoLnJo7tS8-unsplash.jpg",
-    city: "Dhaka",
+    city: "Toronto",
     country: "Canada",
     social: {
       facebook: "#",
@@ -328,7 +328,7 @@ const Users = [
     id: uuidv4(),
     name: "Aysha Khatun",
     img: "./Assets/Images/jurica-koletic-7YVZYZeITc8-unsplash.jpg",
-    city: "Dhaka",
+    city: "London",
     country: "UK",
     social: {
       facebook: "#",
@@ -347,7 +347,7 @@ const Users = [
     id: uuidv4(),
     name: "Smith John",
     img: "./Assets/Images/leio-mclaren-L2dTmhQzx4Q-unsplash.jpg",
-    city: "Dhaka",
+    city: "Kabul",
     country: "Afganisthan",
     social: {
       facebook: "#",
@@ -366,7 +366,7 @@ const Users = [
     id: uuidv4(),
     name: "Aiony-Haust",
     img: "./Assets/Images/luis-villasmil-Z4rqvRpRj38-unsplash.jpg",
-    city: "Dhaka",
+    city: "London",
     country: "America",
     social: {
       facebook: "#",
@@ -385,7 +385,7 @@ const Users = [
     id: uuidv4(),
     name: "Aiony-Haust",
     img: "./Assets/Images/michael-dam-mEZ3PoFGs_k-unsplash.jpg",
-    city: "Dhaka",
+    city: "Kalkata",
     country: "India",
     social: {
       facebook: "#",
@@ -423,8 +423,8 @@ const Users = [
     id: uuidv4(),
     name: "Aiony-Haust",
     img: "./Assets/Images/roland-cousins-3GTHyh2lo9o-unsplash.jpg",
-    city: "Dhaka",
-    country: "US",
+    city: "London",
+    country: "UK",
     social: {
       facebook: "#",
       instagram: "#",
@@ -442,7 +442,7 @@ const Users = [
     id: uuidv4(),
     name: "Aiony-Haust",
     img: "./Assets/Images/romina-farias-BsZ71j4i_m4-unsplash.jpg",
-    city: "Dhaka",
+    city: "Lahore",
     country: "Pakisthan",
     social: {
       facebook: "#",
@@ -480,7 +480,7 @@ const Users = [
     id: uuidv4(),
     name: "Aiony-Haust",
     img: "./Assets/Images/usman-yousaf-q2q5CdLuWnI-unsplash.jpg",
-    city: "Dhaka",
+    city: "New York",
     country: "US",
     social: {
       facebook: "#",
@@ -499,7 +499,7 @@ const Users = [
     id: uuidv4(),
     name: "Aiony-Haust",
     img: "./Assets/Images/vince-veras-AJIqZDAUD7A-unsplash.jpg",
-    city: "Dhaka",
+    city: "Lahore",
     country: "Pakisthan",
     social: {
       facebook: "#",
@@ -518,7 +518,7 @@ const Users = [
     id: uuidv4(),
     name: "Aiony-Haust",
     img: "./Assets/Images/vince-veras-AJIqZDAUD7A-unsplash.jpg",
-    city: "Dhaka",
+    city: "Kabul",
     country: "Afganisthan",
     social: {
       facebook: "#",
@@ -537,7 +537,7 @@ const Users = [
     id: uuidv4(),
     name: "Aiony-Haust",
     img: "./Assets/Images/warren-wong-VVEwJJRRHgk-unsplash.jpg",
-    city: "Dhaka",
+    city: "Austin",
     country: "US",
     social: {
       facebook: "#",
@@ -556,7 +556,7 @@ const Users = [
     id: uuidv4(),
     name: "Aiony-Haust",
     img: "./Assets/Images/aiony-haust.jpg",
-    city: "Dhaka",
+    city: "Lahore",
     country: "Pakisthan",
     social: {
       facebook: "#",
