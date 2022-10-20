@@ -1,9 +1,9 @@
-import { Box, Button, FormControl, FormControlLabel, FormLabel, InputLabel, MenuItem, Modal, Radio, RadioGroup, Select, Stack, Typography } from "@mui/material";
+import { Box, Button, FormControl, FormControlLabel, FormLabel, InputLabel, MenuItem, Modal, Radio, RadioGroup, Select, Slider, Stack, Typography } from "@mui/material";
 import React, { useState } from 'react';
 
 const style = {
   position: "absolute",
-  top: { xs: "38%", md: "25%" },
+  top: { xs: "38%", md: "100px" },
   right: { xs: "15%", md: "151px" },
   bgcolor: "white",
   boxShadow: 24,
@@ -11,7 +11,36 @@ const style = {
   borderRadius: "5px",
   p: 4,
 };
-
+const followersCounter = [
+  {
+    value: 1,
+    label: "1K",
+  },
+  {
+    value: 25,
+    label: "25k",
+  },
+  {
+    value: 50,
+    label: "50k",
+  },
+  {
+    value: 100,
+    label: "100k",
+  },
+  {
+    value: 250,
+    label: "250k",
+  },
+  {
+    value: 500,
+    label: "500k",
+  },
+  {
+    value: 1000,
+    label: "1000k",
+  },
+];
 const AdvanceFilter = ({ onHandleFilter }) => {
   const [open, setOpen] = useState(false);
   const [category, setCategory] = useState("");
@@ -37,6 +66,9 @@ const AdvanceFilter = ({ onHandleFilter }) => {
   const handleGenderChange = (event) => {
     setGender(event.target.value);
   };
+  function handleFollowers(value) {
+      return `${value}k`;
+    };
 
   const handleReset = () => {
     setCategory("");
@@ -49,7 +81,7 @@ const AdvanceFilter = ({ onHandleFilter }) => {
     // console.log(
     //   country + " " + category + " " + audience + " " + social + " " + gender
     // );
-      onHandleFilter(country, gender);
+    onHandleFilter(category, country, gender, audience, social );
     handleClose();
   };
 
@@ -108,14 +140,14 @@ const AdvanceFilter = ({ onHandleFilter }) => {
                 label="Select"
                 onChange={handleCategoryChange}
               >
-                <MenuItem value="fashion">Fashion</MenuItem>
-                <MenuItem value="travel">Travel</MenuItem>
-                <MenuItem value="cooking">Cooking</MenuItem>
-                <MenuItem value="education">Education</MenuItem>
-                <MenuItem value="technology">Technology</MenuItem>
-                <MenuItem value="photography">Photography</MenuItem>
-                <MenuItem value="streaming">Streaming</MenuItem>
-                <MenuItem value="entertainment">Entertainment</MenuItem>
+                <MenuItem value="Fashion">Fashion</MenuItem>
+                <MenuItem value="Travel">Travel</MenuItem>
+                <MenuItem value="Cooking">Cooking</MenuItem>
+                <MenuItem value="Education">Education</MenuItem>
+                <MenuItem value="Technology">Technology</MenuItem>
+                <MenuItem value="Photography">Photography</MenuItem>
+                <MenuItem value="Streaming">Streaming</MenuItem>
+                <MenuItem value="Entertainment">Entertainment</MenuItem>
               </Select>
             </FormControl>
           </Box>
@@ -132,14 +164,14 @@ const AdvanceFilter = ({ onHandleFilter }) => {
                 label="Select"
                 onChange={handleCountryChange}
               >
-                <MenuItem value="bangladesh">Bangladesh</MenuItem>
-                <MenuItem value="india">India</MenuItem>
+                <MenuItem value="Bangladesh">Bangladesh</MenuItem>
+                <MenuItem value="India">India</MenuItem>
                 <MenuItem value="Pakisthan">Pakisthan</MenuItem>
-                <MenuItem value="afganisthan">Afganisthan</MenuItem>
-                <MenuItem value="canada">Canada</MenuItem>
-                <MenuItem value="america">America</MenuItem>
-                <MenuItem value="us">US</MenuItem>
-                <MenuItem value="uk">UK</MenuItem>
+                <MenuItem value="Afganisthan">Afganisthan</MenuItem>
+                <MenuItem value="Canada">Canada</MenuItem>
+                <MenuItem value="America">America</MenuItem>
+                <MenuItem value="US">US</MenuItem>
+                <MenuItem value="UK">UK</MenuItem>
               </Select>
             </FormControl>
           </Box>
@@ -211,6 +243,17 @@ const AdvanceFilter = ({ onHandleFilter }) => {
                 />
               </RadioGroup>
             </FormControl>
+          </Box>
+          <Box sx={{ width: 300 }}>
+            <Slider
+              aria-label="Always visible"
+              color="secondary"
+              defaultValue={250}
+              getAriaValueText={handleFollowers}
+              step={1}
+              marks={followersCounter}
+              valueLabelDisplay="on"
+            />
           </Box>
           <Box
             sx={{ display: "flex", justifyContent: "flex-end", p: "15px 5px" }}

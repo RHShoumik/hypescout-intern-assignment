@@ -24,21 +24,28 @@ const Search = ({ totalUser, Users,filterProfiles, setFilterProfiles }) => {
     setFilterProfiles(searchFilter);
   };
 
-  const handleFilter = (country, gender) => {
-    console.log(country + " " + gender);
-    if (searchText === "") {
-      const filteredArr = filterProfiles.map((user) => {
-        if (
-          (country && user.country.includes(country)) ||
-          (gender && user.gender.includes(gender))
-        ) {
-          return user;
-        }
-        return null;
-      });
-      setFilterProfiles(filteredArr);
-    }
+  const handleFilter = (category, country, gender, social) => {
+    const values = { category, country, gender, social };
+    const fieldsToCheck = [
+      country && "country",
+      gender && "gender",
+      category && "category",
+      social && "social",
+    ].filter(Boolean);
 
+    const filteredArr = Users.filter((user) => {
+      const matchedUser = fieldsToCheck.every((field) => {
+        if (user[field] === values[field]) {
+          console.log("matched");
+          return field;
+        } else {
+          return false;
+        }
+      });
+      return matchedUser;
+    });
+    console.log({ filteredArr });
+    setFilterProfiles(filteredArr);
   };
   useEffect(() => {
     handleSearch(searchText);
